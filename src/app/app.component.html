@@ -1,0 +1,69 @@
+<mat-toolbar>
+  Responsive Sidebar Navigation
+  <button mat-icon-button>
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="over" opened>
+
+    <img class="avatar" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.purplewire.co.za%2F&psig=AOvVaw3JIB7xNLcKIBI9QqBZz8mY&ust=1739967385992000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDNyuKZzYsDFQAAAAAdAAAAABAE">
+    <h4 class="name">Siyabulela Hlanjwa</h4>
+    <p class="designation">Software Engineer</p>
+    
+    <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content expansion-panels panels">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <p>Portable Device</p>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Laptop Tracking Location Monitoring</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Office Tracking
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Office Equipment Office Accessories</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Administration
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Configuration for administrators</p>
+      </mat-expansion-panel>
+    </div>
+
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
