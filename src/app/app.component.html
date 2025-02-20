@@ -1,16 +1,20 @@
 <mat-toolbar>
-  Responsive Sidebar Navigation
   <button mat-icon-button>
     <mat-icon>
       menu
     </mat-icon>
   </button>
+
+   <h1>Responsive Sidebar Navigation</h1>
+  
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav mode="over" opened>
+  <mat-sidenav [mode]="menuSelectorMode()" #matSidenav opened="true" class="mat-elevation-z8">
 
-    <img class="avatar" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.purplewire.co.za%2F&psig=AOvVaw3JIB7xNLcKIBI9QqBZz8mY&ust=1739967385992000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDNyuKZzYsDFQAAAAAdAAAAABAE">
+    <img class="avatar"  width="5dvh"
+    height="240px" 
+    src="./images/purple.jpeg">
     <h4 class="name">Siyabulela Hlanjwa</h4>
     <p class="designation">Software Engineer</p>
     

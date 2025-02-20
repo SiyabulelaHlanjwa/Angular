@@ -1,17 +1,35 @@
 mat-toolbar {
-  background-color: #004a9f;
+  background: red;
   color: white;
+  height: 50px;
 }
 
 mat-sidenav {
   margin: 16px;
   width: 200px;
   border-right: none;
-  background: #002bc5;
+  background: #083c5d;
   color: white;
   border-radius: 10px;
   padding: 16px;
   text-align: center;
+}
+
+mat-expansion-panel:hover {
+  background-color: #284b63;
+  color: white;
+}
+
+mat-expansion-panel-header:hover {
+  color: white;
+}
+
+at-panel-title:hover {
+  color: white;
+}
+
+.p:hover {
+  color: #ffffff;
 }
 
 .content {
@@ -21,8 +39,9 @@ mat-sidenav {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
   font-size: 2rem;
-  color: lightgray;
+  color: white;
   border-radius: 10px;
 }
 
@@ -50,11 +69,43 @@ mat-sidenav-container {
 .designation {
   margin-top: 2px;
   font-size: 0.7rem;
-  color: lightgray;
+  color: white;
 }
 
 mat-divider {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.expansion-panels {
+  display: flex;
+  justify-content: space-between; /* Spread the panels evenly */
+  gap: 10px; /* Add spacing between panels */
+  margin: 16px; /* Add margin around the panels */
+  /* Responsive breakpoint for screens smaller than 800px */
+}
+.expansion-panels mat-expansion-panel {
+  flex: 1; /* Ensure each panel gets equal width */
+}
+@media (max-width: 800px) {
+  .expansion-panels {
+    flex-direction: column; /* Stack panels vertically */
+  }
+  .expansion-panels mat-expansion-panel {
+    width: 100%; /* Panels take full width in column layout */
+  }
+}
+
+.toolbar-shadow {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index: 2;
+  transition: box-shadow 0.3s ease-in-out;
+  height: 100px;
+}
+
+.panel.a {
+  background-color: aquamarine;
+  color: ref;
 }/*# sourceMappingURL=app.component.css.map */

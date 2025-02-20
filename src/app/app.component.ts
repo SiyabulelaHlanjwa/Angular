@@ -1,40 +1,48 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Component, computed, inject, OnInit, ViewChild } from '@angular/core';
+import { EnvironmnetService } from './services/environmnet.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {BreakpointObserver} from '@angular/cdk/layout';
-
+//import {BreakpointObserver} from '@angular/cdk/layout';
+import { ResponsivenessService } from './services/responsiveness.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule, MatSidenavModule, MatButtonModule, MatIconModule, MatDividerModule, MatExpansionModule],
+  imports: [
+     MatToolbarModule, 
+     MatSidenavModule,
+     MatButtonModule,
+     MatIconModule, 
+     MatDividerModule,
+     MatExpansionModule
+    ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  responsive= inject(ResponsivenessService);
+  apiUrl: string='';
 
   @ViewChild(MatSidenav) 
   sidenav!:MatSidenav;
 
-  constructor(private observer: BreakpointObserver){
-
+  constructor(private envService: EnvironmnetService){}
+ 
+  ngOnInit():void{
+  this.apiUrl=this.envService.apiUrl;
+  console.log('API URL: ',this.apiUrl);
+  console.log("In Production mode", this.envService.isProduction)
+ }
+ 
+ menuSelectorMode =computed(()=>{
+  if(this.responsive.largW()){
+    return 'side';
   }
-
-  ngAfterViewInit(){
-    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
-      if (res.matches){
-        this.sidenav.mode='over';
-        this.sidenav.close();
-      }else{
-        this.sidenav.open();
-      }
-    });
-  }
+  return 'over';
+ })
 
   title = 'angular-three';
 }
